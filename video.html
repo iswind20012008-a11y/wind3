@@ -1,25 +1,233 @@
-1. Đối với tạo dựng Video (AI Video Generation)
-Hiện nay có 3 hướng chính để sử dụng AI làm video:
-Chuyển văn bản thành video (Text-to-Video): Bạn chỉ cần nhập kịch bản, AI sẽ tự tạo cảnh quay, ghép âm thanh và phụ đề.
-Công cụ nổi bật: Runway Gen-3, Pika Labs, Sora (OpenAI) hay Luma Dream Machine.
-Cách làm: Nhập một mô tả chi tiết (Prompt) như: "Cảnh quay cinematic một phi hành gia đi bộ trên sao Hỏa dưới ánh hoàng hôn xanh".
-Tạo Avatar ảo thuyết trình: Phù hợp cho giảng dạy hoặc làm video marketing mà không cần quay hình thật.
-Công cụ: HeyGen, Synthesia, D-ID.
-Cách làm: Tải ảnh chân dung lên, nhập văn bản lồng tiếng, AI sẽ tạo video nhân vật nói chuyện khớp với khẩu hình.
-Tự động biên tập video: AI giúp cắt ghép, tạo hiệu ứng hoặc tóm tắt video dài thành video ngắn (Shorts/TikTok).
-Công cụ: OpusClip, CapCut (AutoCut), Pictory. 
-2. Đối với Đồ họa & Thiết kế (AI Graphic Design)
-AI giúp bạn hiện thực hóa ý tưởng hình ảnh mà không cần kỹ năng vẽ tay chuyên nghiệp:
-Tạo ảnh từ văn bản (Image Generation):
-Công cụ: Midjourney (đẹp nhất), DALL-E 3 (dễ dùng), Canva Magic Media.
-Ứng dụng: Tạo minh họa cho giáo án, poster, hoặc concept art cho dự án đồ họa.
-Chỉnh sửa ảnh thông minh (Generative Fill):
-Công cụ: Adobe Photoshop (Generative Fill), Canva.
-Cách làm: Khoanh vùng một khu vực trên ảnh và yêu cầu AI "thêm một chiếc kính mát" hoặc "xóa phông nền" chỉ bằng câu lệnh văn bản.
-Thiết kế Giao diện (UI/UX):
-Công cụ: Uizard, Framer AI.
-Cách làm: Vẽ nháp bằng tay lên giấy và dùng AI để chuyển thành giao diện ứng dụng chuyên nghiệp trong tích tắc. 
-3. Quy trình đề xuất cho người mới bắt đầu
-Lên ý tưởng: Dùng ChatGPT hoặc Claude để viết kịch bản video/mô tả đồ họa.
-Tạo tài nguyên: Dùng Midjourney (ảnh) hoặc HeyGen (video nhân vật nói).
-Hoàn thiện: Dùng Canva hoặc CapCut để ghép tất cả lại, thêm nhạc và hiệu ứng cuối cùng. 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kỷ Nguyên AI: Video & Đồ Họa</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --dark-color: #1e293b;
+            --text-color: #334155;
+            --bg-color: #f8fafc;
+            --accent-color: #f59e0b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: -50px auto 50px;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 1rem 0;
+            color: #ffffff;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            margin-top: 3rem;
+            font-size: 1.8rem;
+        }
+
+        .section-intro {
+            font-size: 1.2rem;
+            color: #64748b;
+            font-style: italic;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .tool-card {
+            background: #f1f5f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .tool-name {
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+
+        .how-to {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .step-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .step {
+            border: 1px dashed var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 1.5rem; margin-top: -20px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <span class="badge">Công nghệ 2024</span>
+    <h1>Ứng dụng AI trong Sáng tạo Nội dung: Video & Đồ họa</h1>
+    <p>Khám phá cách trí tuệ nhân tạo đang thay đổi cuộc chơi thiết kế toàn cầu</p>
+</header>
+
+<div class="container">
+    <p class="section-intro">
+        Sự bùng nổ của AI đã mở ra những giới hạn mới, giúp biến những ý tưởng phức tạp thành hiện thực chỉ trong vài giây. Dưới đây là lộ trình toàn diện để bạn làm chủ các công cụ này.
+    </p>
+
+    <!-- Section 1: Video -->
+    <h2>1. Tạo dựng Video (AI Video Generation)</h2>
+    <p>Hiện nay có 3 hướng chính để sử dụng AI làm video chuyên nghiệp:</p>
+
+    <div class="tool-card">
+        <span class="tool-name">🎥 Chuyển văn bản thành video (Text-to-Video):</span>
+        <p>AI tự tạo cảnh quay, ghép âm thanh và phụ đề từ kịch bản của bạn.</p>
+        <strong>Công cụ:</strong> Runway Gen-3, Pika Labs, Sora (OpenAI), Luma Dream Machine.
+        <div class="how-to">
+            💡 <strong>Cách làm:</strong> Nhập Prompt chi tiết: <em>"Cảnh quay cinematic một phi hành gia đi bộ trên sao Hỏa dưới ánh hoàng hôn xanh"</em>.
+        </div>
+    </div>
+
+    <div class="tool-card">
+        <span class="tool-name">👤 Tạo Avatar ảo thuyết trình:</span>
+        <p>Tạo video marketing hoặc giảng dạy mà không cần đứng trước ống kính.</p>
+        <strong>Công cụ:</strong> HeyGen, Synthesia, D-ID.
+        <div class="how-to">
+            💡 <strong>Cách làm:</strong> Tải ảnh chân dung, nhập văn bản lồng tiếng, AI sẽ khớp khẩu hình nhân vật tự động.
+        </div>
+    </div>
+
+    <div class="tool-card">
+        <span class="tool-name">✂️ Tự động biên tập video:</span>
+        <p>Biến video dài thành Shorts/TikTok trong tích tắc.</p>
+        <strong>Công cụ:</strong> OpusClip, CapCut (AutoCut), Pictory.
+    </div>
+
+    <!-- Section 2: Graphics -->
+    <h2>2. Đồ họa & Thiết kế (AI Graphic Design)</h2>
+    
+    <div class="tool-card">
+        <span class="tool-name">🎨 Tạo ảnh từ văn bản (Image Generation):</span>
+        <p>Ứng dụng làm minh họa giáo án, poster, hoặc concept art.</p>
+        <strong>Công cụ:</strong> <a href="#">Midjourney</a> (Đẹp nhất), DALL-E 3 (Dễ dùng), Canva Magic Media.
+    </div>
+
+    <div class="tool-card">
+        <span class="tool-name">🪄 Chỉnh sửa ảnh thông minh (Generative Fill):</span>
+        <p>Thêm hoặc xóa vật thể bằng câu lệnh văn bản.</p>
+        <strong>Công cụ:</strong> Adobe Photoshop, Canva.
+        <div class="how-to">
+            💡 <strong>Cách làm:</strong> Khoanh vùng khu vực ảnh và gõ: <em>"thêm một chiếc kính mát"</em>.
+        </div>
+    </div>
+
+    <div class="tool-card">
+        <span class="tool-name">📱 Thiết kế Giao diện (UI/UX):</span>
+        <p>Chuyển bản vẽ tay thành giao diện ứng dụng chuyên nghiệp.</p>
+        <strong>Công cụ:</strong> Uizard, Framer AI.
+    </div>
+
+    <!-- Section 3: Roadmap -->
+    <h2>3. Quy trình đề xuất cho người mới</h2>
+    <div class="step-container">
+        <div class="step">
+            <div class="step-number">1</div>
+            <strong>Lên ý tưởng</strong>
+            <p>Sử dụng ChatGPT hoặc Claude để viết kịch bản và mô tả chi tiết.</p>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <strong>Tạo tài nguyên</strong>
+            <p>Dùng Midjourney để lấy ảnh hoặc HeyGen để tạo nhân vật nói.</p>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <strong>Hoàn thiện</strong>
+            <p>Dùng CapCut hoặc Canva để ghép nhạc, hiệu ứng và xuất bản.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 AI Technology Review. Biên tập bởi AI Assistant.</p>
+</footer>
+
+</body>
+</html>
