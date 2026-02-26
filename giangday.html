@@ -1,15 +1,221 @@
-1. Dành cho Giáo viên: Trợ lý thiết kế bài giảng
-Giáo viên có thể sử dụng AI để tự động hóa các khâu chuẩn bị nội dung, giúp tiết kiệm thời gian tập trung vào việc tương tác với học sinh.
-Lập kế hoạch bài dạy (Lesson Planning): Sử dụng các công cụ như MagicSchool.ai, Eduaide.Ai hoặc Kuraplan để tạo giáo án bám sát chương trình học chỉ trong vài phút.
-Thiết kế tài liệu và bài tập: Sử dụng Twee để tạo văn bản, câu hỏi điền từ hoặc bài tập nghe hiểu dựa trên một chủ đề cụ thể. Công cụ Quizizz giúp tạo các bài kiểm tra tương tác phù hợp với trình độ từng học sinh.
-Tạo Slides bài giảng: Các công cụ AI cho phép tạo nội dung và trình chiếu tự động từ văn bản hoặc đường dẫn có sẵn, giúp bài giảng sinh động hơn. 
-2. Dành cho Học sinh: Cá nhân hóa lộ trình học tập
-AI thay đổi cách học từ "một kích thước cho tất cả" sang trải nghiệm riêng biệt:
-Lộ trình học riêng: AI phân tích dữ liệu học tập để tự động điều chỉnh nội dung và tốc độ học phù hợp với năng lực từng cá nhân.
-Trợ lý học tập (Tutor): Khanmigo của Khan Academy đóng vai trò như một gia sư 24/7, hướng dẫn học sinh giải quyết vấn đề thay vì chỉ đưa ra đáp án.
-Hỗ trợ đặc biệt: Các tính năng nhận diện giọng nói và chuyển đổi văn bản của AI giúp học sinh khuyết tật vượt qua rào cản tiếp cận kiến thức. 
-3. Quy trình triển khai hợp lý trong nhà trường
-Để áp dụng AI hiệu quả, cần thực hiện theo các bước chiến lược:
-Tích hợp vào chương trình: Cập nhật tài liệu giảng dạy và lồng ghép AI vào các môn học một cách bài bản.
-Đào tạo kỹ năng (AI Literacy): Trang bị cho giáo viên và học sinh kiến thức về cách sử dụng AI an toàn, đạo đức và tránh rủi ro về bảo mật dữ liệu.
-Tận dụng Gamification: Sử dụng AI để "trò chơi hóa" nội dung bài học, kích thích tư duy sáng tạo và giải quyết vấn đề thông qua các môi trường học tập tương tác. 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI trong Giáo dục: Tương lai của Dạy và Học</title>
+    <style>
+        :root {
+            /* Tông màu Navy đậm chuyên nghiệp */
+            --navy-dark: #001a33;
+            --navy-primary: #002d59;
+            --navy-accent: #004080;
+            --text-main: #1a1a1a;
+            --text-muted: #545b62;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Header phong cách báo chí */
+        header {
+            border-bottom: 4px solid var(--navy-dark);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+        }
+
+        .category-tag {
+            background: var(--navy-dark);
+            color: var(--white);
+            padding: 4px 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 3px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--navy-dark);
+            margin: 15px 0;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        /* Hình ảnh minh họa */
+        .featured-image-container {
+            margin: 30px 0;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* Section Styling */
+        h2 {
+            font-size: 1.8rem;
+            color: var(--navy-primary);
+            border-left: 6px solid var(--navy-dark);
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+
+        .content-card {
+            background: var(--bg-light);
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .sub-heading {
+            color: var(--navy-accent);
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .tool-list {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .tool-list li {
+            margin-bottom: 12px;
+        }
+
+        .tool-name {
+            color: var(--navy-dark);
+            font-weight: 600;
+            background: #eef2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Quy trình triển khai */
+        .process-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .step-item {
+            border-top: 3px solid var(--navy-primary);
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .step-number {
+            color: var(--navy-dark);
+            font-size: 1.5rem;
+            font-weight: 800;
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 20px; margin: 0; }
+            h1 { font-size: 1.8rem; }
+            .featured-image { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="category-tag">Công nghệ giáo dục</span>
+        <h1>AI Trong Giáo Dục: Từ Trợ Lý Giảng Dạy Đến Cá Nhân Hóa Học Tập</h1>
+        <div class="article-meta">Xuất bản: 26/02/2026 | Theo dõi chuyên mục EdTech</div>
+    </header>
+
+    <div class="featured-image-container">
+        <img src="img/giangday.jpg" 
+             alt="AI in Education" class="featured-image">
+        <p class="image-caption">Trí tuệ nhân tạo đang tái định nghĩa vai trò của giáo viên và học sinh trong kỷ nguyên số.</p>
+    </div>
+
+    <h2>1. Dành cho Giáo viên: Trợ lý thiết kế bài giảng</h2>
+    <div class="content-card">
+        <p>Giáo viên có thể sử dụng AI để tự động hóa các khâu chuẩn bị nội dung, giúp tiết kiệm thời gian tập trung vào việc tương tác trực tiếp với học sinh.</p>
+        <ul class="tool-list">
+            <li><span class="sub-heading">Lập kế hoạch bài dạy (Lesson Planning)</span>
+                Sử dụng các công cụ như <span class="tool-name">MagicSchool.ai</span>, <span class="tool-name">Eduaide.Ai</span> hoặc <span class="tool-name">Kuraplan</span> để tạo giáo án bám sát chương trình học chỉ trong vài phút.</li>
+            <li><span class="sub-heading">Thiết kế tài liệu và bài tập</span>
+                Sử dụng <span class="tool-name">Twee</span> để tạo văn bản, câu hỏi hoặc bài tập nghe hiểu. Công cụ <span class="tool-name">Quizizz</span> giúp tạo các bài kiểm tra tương tác phù hợp với trình độ từng học sinh.</li>
+            <li><span class="sub-heading">Tạo Slides bài giảng</span>
+                Tự động hóa trình chiếu từ văn bản hoặc đường dẫn có sẵn, giúp bài giảng sinh động và trực quan hơn.</li>
+        </ul>
+    </div>
+
+    <h2>2. Dành cho Học sinh: Cá nhân hóa lộ trình học tập</h2>
+    <div class="content-card">
+        <p>AI thay đổi cách học từ "một kích thước cho tất cả" sang trải nghiệm học tập riêng biệt cho mỗi cá nhân:</p>
+        <ul class="tool-list">
+            <li><span class="sub-heading">Lộ trình học riêng</span>
+                AI phân tích dữ liệu để điều chỉnh nội dung và tốc độ học phù hợp với năng lực từng người.</li>
+            <li><span class="sub-heading">Gia sư ảo (Tutor)</span>
+                Công cụ <span class="tool-name">Khanmigo</span> của Khan Academy hướng dẫn học sinh giải quyết vấn đề từng bước thay vì chỉ đưa ra đáp án cuối cùng.</li>
+            <li><span class="sub-heading">Hỗ trợ đặc biệt</span>
+                Nhận diện giọng nói và chuyển đổi văn bản giúp học sinh khuyết tật dễ dàng tiếp cận kiến thức hơn.</li>
+        </ul>
+    </div>
+
+    <h2>3. Quy trình triển khai hợp lý trong nhà trường</h2>
+    <div class="process-box">
+        <div class="step-item">
+            <div class="step-number">01</div>
+            <strong>Tích hợp bài bản</strong>
+            <p>Cập nhật tài liệu giảng dạy và lồng ghép AI vào các môn học một cách có hệ thống.</p>
+        </div>
+        <div class="step-item">
+            <div class="step-number">02</div>
+            <strong>Đào tạo AI Literacy</strong>
+            <p>Trang bị kỹ năng sử dụng AI an toàn, đạo đức và bảo mật dữ liệu cho cả thầy và trò.</p>
+        </div>
+        <div class="step-item">
+            <div class="step-number">03</div>
+            <strong>Tận dụng Gamification</strong>
+            <p>Sử dụng AI để "trò chơi hóa" nội dung, kích thích sáng tạo thông qua môi trường tương tác.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
