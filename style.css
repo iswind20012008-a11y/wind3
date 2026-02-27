@@ -123,3 +123,36 @@ footer {background-color: lightgrey; margin: 1px; padding: 10px; white-space: no
 .dropdown-content {
   z-index: 999; 
 }
+@media screen and (max-width: 768px) {
+  .banner { height: 400px; }
+  
+  .banner h1 {
+    font-size: 32px;
+    left: 50%;
+    top: 50%;
+    width: 90%;
+    text-align: center;
+  }
+
+  .row { flex-direction: column; }
+
+  .block_3, .block_4 {
+    width: 100%;
+    margin: 10px 0;
+    flex: none;
+  }
+
+  .image-row { flex-direction: column; gap: 15px; }
+
+  .image-row img, .cell_img1, .cell_img2 {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .link2 { margin: 5px 0; display: block; text-align: center; }
+
+  footer {
+    white-space: normal;
+    text-align: center;
+  }
