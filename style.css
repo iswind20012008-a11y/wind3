@@ -8,7 +8,11 @@
 body {
     background-color: #f0f0f0;
 }
-
+@media (max-width: 768px) {
+            .container { padding: 20px; margin: 0; }
+            h1 { font-size: 1.8rem; }
+            .featured-image { height: 250px; }
+}
 #link { color: black;}
 .banner h1 {
   position: absolute;
