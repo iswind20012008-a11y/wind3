@@ -247,3 +247,41 @@ footer {
   }
 
 }
+@media screen and (max-width: 768px) {
+
+  .banner {
+    height: 320px;
+  }
+
+  .banner h1 {
+    font-size: 24px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .slogan {
+    padding: 15px 10px;
+  }
+
+  .block_3 {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .cell_text1,
+  .cell_text2 {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .cell_img1 img,
+  .cell_img2 img {
+    margin: 15px 0;
+    border-radius: 6px;
+  }
+
+}
